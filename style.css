@@ -1,0 +1,84 @@
+body {
+    background-image: url("/images/bg_light_medium.jpg");
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 650px; /* Adjust the width as needed */
+    height: 480px; /* Adjust the height as needed */
+    border: 1px solid #ccc;
+    place-items: center;
+    display: grid;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: rgba(236, 236, 236, 0.99);
+    border-radius: 56px;
+    box-shadow: 6px 14px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+#btn-dec {
+    border-radius: 32px;
+    border: 2px solid #C60000;
+    background: #EFEFEF;
+    box-shadow: 4px 8px 4px 1px rgba(0, 0, 0, 0.25);
+    margin-right: 40px;
+}
+
+#btn-sav {
+    height: 48px;
+    width: 460px;
+    border-radius: 32px;
+    border: 2px solid #0A0796;
+    background: #EFEFEF;
+    box-shadow: 4px 8px 4px 1px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.6s
+}
+
+#btn-inc {
+    border-radius: 32px;
+    border: 2px solid #07B44C;
+    background: #EFEFEF;
+    box-shadow: 4px 8px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+#btn-dec:active {
+    background: #C60000;
+    color: #ffffff;
+}
+
+#btn-inc:active {
+    background: #07B44C;
+    color: #ffffff;
+}
+
+#btn-sav:active {
+    background: #0A0796;
+    color: #ffffff;
+}
+
+.btn-normal {
+    width: 212px;
+    height: 48px;
+    transition: background-color 0.6s
+}
+
+#toggle-theme {
+    width: 120px;
+    height: 32px;
+    border-radius: 32px;
+    /*outline: 0;*/
+    border: none;
+    background: #D9D9D9;
+    box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.6s;
+}
+
+#toggle-theme:active {
+    background: #000000;
+    color: #ffffff;
+}
