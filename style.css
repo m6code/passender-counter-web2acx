@@ -1,3 +1,7 @@
+:root {
+    color-scheme: dark light;
+}
+
 body {
     background-image: url("/images/bg_light_medium.jpg");
     display: grid;
@@ -7,6 +11,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -81,4 +86,38 @@ body {
 #toggle-theme:active {
     background: #000000;
     color: #ffffff;
+}
+
+
+
+/* DARK THEME */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: url("/images/bg_medium.jpg");
+    }
+
+    .container {
+        background: rgba(49, 49, 49, 0.95);
+    }
+
+
+
+    #btn-dec {
+        background: #CC6363;
+        border: none;
+    }
+
+    #btn-inc {
+        background: #519E70;
+        border: none;
+    }
+
+    #btn-sav {
+        background: #5E5D9A;
+        border: none;
+    }
+
+    #toggle-theme {
+        background: #828282;
+    }
 }
