@@ -13,15 +13,19 @@
     <h1>Passenger Counter</h1>
     <h1 id="counter">0</h1>
     <div class="btn-control">
-        <button class="btn-normal" id="btn-dec" onclick="decrement()" disabled>Decrement</button>
-        <button class="btn-normal" id="btn-inc" onclick="increment()">Increment</button>
+        <button class="btn-normal btn" id="btn-dec" onclick="decrement()" disabled>Decrement</button>
+        <button class="btn-normal btn" id="btn-inc" onclick="increment()">Increment</button>
     </div>
     <div>
-        <button id="btn-sav" onclick="save()">Save</button>
+        <button class="btn" id="btn-sav" onclick="save()">Save</button>
     </div>
-    <p>Previous Entries: <span id="previous-entries"></span></p>
+    <div>
+        <p>Previous Entries: <span id="previous-entries"></span></p>
+    </div>
     <div class="theme-toggle">
-        <button id="toggle-theme">Toggle Theme</button>
+        <a href="ms-settings:personalization-colors">
+            <button id="toggle-theme">Toggle Theme</button>
+        </a>
     </div>
 </div>
 
