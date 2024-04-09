@@ -1,9 +1,29 @@
 :root {
-    color-scheme: dark light;
+    color-scheme: light;
+    --border-container: 1px solid #ccc;
+    --color-bg-container: rgba(236, 236, 236, 0.95);
+    --shadow-container: 6px 14px 10px 4px rgba(0, 0, 0, 0.25);
+    --icon-fill: #797979;
+    --icon-fill-hover: rgba(86, 86, 86, 0.95);
+    --color-btn-action-active: #fff;
+    --bg-img: url("/images/bg_light_medium.jpg");
+
+    --border-btn-dec: 2px solid #C60000;
+    --color-bg-btn-dec: #EFEFEF;
+    --color-bg-btn-dec-active: #b02626;
+
+
+    --border-btn-sav: 2px solid #0A0796;
+    --color-bg-btn-sav: #EFEFEF;
+    --color-bg-btn-sav-active: #3b3b75;
+
+    --border-btn-inc: 2px solid #07B44C;
+    --color-bg-btn-inc: #EFEFEF;
+    --color-bg-btn-inc-active: #07B44C;
 }
 
 body {
-    background-image: url("/images/bg_light_medium.jpg");
+    background-image: var(--bg-img);
     display: grid;
     place-items: center;
     height: 100vh;
@@ -17,53 +37,54 @@ body {
 .container {
     width: 650px;
     height: 480px;
-    border: 1px solid #ccc;
+    border: var(--border-container);
     place-items: center;
     display: grid;
     padding: 1rem 2rem 1rem 2rem;
-    background-color: rgba(236, 236, 236, 0.95);
+    background-color: var(--color-bg-container);
     border-radius: 56px;
-    box-shadow: 6px 14px 10px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow-container);
+}
+
+div .btn {
+    border-radius: 32px;
+    box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s;
+}
+
+div .btn:active {
+    color: var(--color-btn-action-active);
+    box-shadow: 4px 8px 4px 1px rgba(0, 0, 0, 0.25);
 }
 
 #btn-dec {
-    border-radius: 32px;
-    border: 2px solid #C60000;
-    background: #EFEFEF;
-    box-shadow: 4px 8px 4px 1px rgba(0, 0, 0, 0.25);
+    border: var(--border-btn-dec);
+    background: var(--color-bg-btn-dec);
     margin-right: 40px;
 }
 
 #btn-sav {
     height: 48px;
     width: 460px;
-    border-radius: 32px;
-    border: 2px solid #0A0796;
-    background: #EFEFEF;
-    box-shadow: 4px 8px 4px 1px rgba(0, 0, 0, 0.25);
-    transition: background-color 0.6s
+    background: var(--color-bg-btn-sav);
+    border: var(--border-btn-sav);
 }
 
 #btn-inc {
-    border-radius: 32px;
-    border: 2px solid #07B44C;
-    background: #EFEFEF;
-    box-shadow: 4px 8px 4px 1px rgba(0, 0, 0, 0.25);
+    border: var(--border-btn-inc);
+    background: var(--color-bg-btn-inc);
 }
 
 #btn-dec:active {
-    background: #C60000;
-    color: #ffffff;
+    background: var(--color-bg-btn-dec-active);
 }
 
 #btn-inc:active {
-    background: #07B44C;
-    color: #ffffff;
+    background: var(--color-bg-btn-inc-active);
 }
 
 #btn-sav:active {
-    background: #0A0796;
-    color: #ffffff;
+    background: var(--color-bg-btn-sav-active);
 }
 
 .btn-normal {
@@ -72,71 +93,107 @@ body {
     transition: background-color 0.6s
 }
 
-#toggle-theme {
-    width: 120px;
-    height: 32px;
-    border-radius: 32px;
-    /*outline: 0;*/
-    border: none;
-    background: #D9D9D9;
-    box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.25);
-    transition: background-color 0.6s;
-}
-
-#toggle-theme:active {
-    background: #000000;
-    color: #ffffff;
-}
-
 
 /* DARK THEME */
 @media (prefers-color-scheme: dark) {
-    body {
-        background-image: url("/images/bg_medium.jpg");
-    }
+    :root {
+        color-scheme: dark;
 
-    .container {
-        background: rgba(49, 49, 49, 0.95);
-    }
+        --border-container: 1px solid #ccc;
+        --color-bg-container: rgba(49, 49, 49, 0.95);
+        --shadow-container: 6px 14px 10px 4px rgba(0, 0, 0, 0.25);
+        --icon-fill: #ccc;
+        --icon-fill-hover: rgba(236, 236, 236, 0.95);
+        --color-btn-action-active: #fff;
+        --bg-img: url("/images/bg_medium.jpg");
+
+        --border-btn-dec: none;
+        --color-bg-btn-dec: #CC6363;
+        --color-bg-btn-dec-active: #b02626;
 
 
-    #btn-dec {
-        background: #CC6363;
-        border: none;
-    }
+        --border-btn-sav: none;
+        --color-bg-btn-sav: #5E5D9A;
+        --color-bg-btn-sav-active: #3b3b75;
 
-    #btn-inc {
-        background: #519E70;
-        border: none;
+        --border-btn-inc: none;
+        --color-bg-btn-inc: #519E70;
+        --color-bg-btn-inc-active: #07B44C;
     }
+}
 
-    #btn-sav {
-        background: #5E5D9A;
-        border: none;
-    }
+:root[data-theme="dark"] {
+    color-scheme: dark;
 
-    #toggle-theme {
-        background: #828282;
-    }
+    --border-container: 1px solid #ccc;
+    --color-bg-container: rgba(49, 49, 49, 0.95);
+    --shadow-container: 6px 14px 10px 4px rgba(0, 0, 0, 0.25);
+    --icon-fill: #ccc;
+    --icon-fill-hover: rgba(236, 236, 236, 0.95);
+    --color-btn-action-active: #fff;
+    --bg-img: url("/images/bg_medium.jpg");
+
+    --border-btn-dec: none;
+    --color-bg-btn-dec: #CC6363;
+    --color-bg-btn-dec-active: #b02626;
+
+
+    --border-btn-sav: none;
+    --color-bg-btn-sav: #5E5D9A;
+    --color-bg-btn-sav-active: #3b3b75;
+
+    --border-btn-inc: none;
+    --color-bg-btn-inc: #519E70;
+    --color-bg-btn-inc-active: #07B44C;
+}
+
+/* LIGHT THEME with Toggle */
+:root[data-theme="light"] {
+    color-scheme: light;
+    --border-container: 1px solid #ccc;
+    --color-bg-container: rgba(236, 236, 236, 0.95);
+    --shadow-container: 6px 14px 10px 4px rgba(0, 0, 0, 0.25);
+    --icon-fill: #797979;
+    --icon-fill-hover: rgba(86, 86, 86, 0.95);
+    --color-btn-action-active: #fff;
+    --bg-img: url("/images/bg_light_medium.jpg");
+
+    --border-btn-dec: 2px solid #C60000;
+    --color-bg-btn-dec: #EFEFEF;
+    --color-bg-btn-dec-active: #b02626;
+
+
+    --border-btn-sav: 2px solid #0A0796;
+    --color-bg-btn-sav: #EFEFEF;
+    --color-bg-btn-sav-active: #3b3b75;
+
+    --border-btn-inc: 2px solid #07B44C;
+    --color-bg-btn-inc: #EFEFEF;
+    --color-bg-btn-inc-active: #07B44C;
 }
 
 /* RESPONSIVENESS */
 
 /* Extra Small Devices (Phones): */
 @media only screen and (max-width: 576px) {
+    :root {
+        --bg-img: none;
+        --color-bg-container: rgba(256, 256, 256, 1);
+    }
     body {
-        background-image: none;
+        background-image: var(--bg-img);
     }
 
     h1 {
         font-size: large;
     }
+
     .container {
         width: 100vw;
         height: 100vh;
         margin: auto;
         border-radius: 0;
-        background-color: rgba(256, 256, 256, 1);
+        background-color: var(--color-bg-container);
     }
 
     #btn-sav {
@@ -144,7 +201,7 @@ body {
         margin-top: 48px;
     }
 
-    .container > div  {
+    .container > div {
         width: 100vw;
     }
 
@@ -156,13 +213,17 @@ body {
     }
 
     @media (prefers-color-scheme: dark) {
-        .container {
-            background: rgba(49, 49, 49, 0.95);
+        :root {
+            --color-bg-container: rgba(49, 49, 49, 0.95);
         }
     }
 
-    .theme-toggle {
-        /*display: none;*/
+    :root[data-theme="dark"] {
+        --color-bg-container: rgba(49, 49, 49, 0.95);
+    }
+
+    :root[data-theme="light"] {
+        --color-bg-container: rgba(256, 256, 256, 1);
     }
 }
 
